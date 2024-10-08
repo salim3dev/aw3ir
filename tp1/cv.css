@@ -25,7 +25,7 @@ th, td {
 
 /* 3. Fond de couleur différent pour les lignes impaires */
 tr:nth-child(odd) {
-    background-color: #f4f4f4;
+    background-color: #e9ebc7;
 }
 
 /* 4. Changement de la couleur de fond au survol */
