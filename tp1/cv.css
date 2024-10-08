@@ -30,8 +30,8 @@ tr:nth-child(odd) {
 
 /* 4. Changement de la couleur de fond au survol */
 tr:hover {
-   /* background-color: #d6d4d4;*/
-	background-color: #eff2c7;
+    background-color: #d6d4d4;
+	
 }
 
 /* 5. Style pour les liens */
