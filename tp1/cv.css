@@ -25,12 +25,12 @@ th, td {
 
 /* 3. Fond de couleur différent pour les lignes impaires */
 tr:nth-child(odd) {
-    background-color: #e9ebc7;
+    background-color: #e3e1e1;
 }
 
 /* 4. Changement de la couleur de fond au survol */
 tr:hover {
-    background-color: #e9e9e9;
+    background-color: #d6d4d4;
 }
 
 /* 5. Style pour les liens */
