@@ -21,6 +21,7 @@
 
         <h1> TP AW</h1>
         <h3>Avec Bootstrap 5</h3>
+        <br>
         
         <form id="userInfoForm" class="row g-3" action="/submit" method="post">
             
@@ -34,13 +35,81 @@
                   <input type="text" class="form-control" placeholder="Prenom" aria-label="Last name">
                 </div>
               </div>
+
+
+
+
+
+
+
+              <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" class="form-control" required>
+            </div>
+
+
+
+
+
+
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Niveau d'études</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      Doctorat
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Master
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <label class="form-check-label" for="gridRadios3">
+                      Licence
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                    <label class="form-check-label" for="gridRadios4">
+                      BAC
+                    </label>
+                  </div>
+
+                  
+
+                  <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                      Système classqiue
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+
+
+
+
+
+
+
+
+
+
                 <div class="col-12">
-                  <label for="inputAddress" class="form-label">Address</label>
+                  <label for="inputAddress" class="form-label">Adresse</label>
                   <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                 </div>
                 
                 <div class="col-md-6">
-                  <label for="inputCity" class="form-label">ville</label>
+                  <label for="inputCity" class="form-label">Ville</label>
                   <input type="text" class="form-control" id="inputCity">
                 </div>
                 <div class="col-md-4">
@@ -51,7 +120,7 @@
                   </select>
                 </div>
                 <div class="col-md-2">
-                  <label for="inputZip" class="form-label">Zip</label>
+                  <label for="inputZip" class="form-label">Code Zip</label>
                   <input type="text" class="form-control" id="inputZip">
                 </div>
                 <div class="col-12">
@@ -63,7 +132,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  <button type="submit" class="btn btn-primary">Valider</button>
                 </div>
               
         </form>
