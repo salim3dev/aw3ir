@@ -1,4 +1,3 @@
-
 // gps.js
 
 // Fonction pour demander la géolocalisation de l'utilisateur
