@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire de Contact</title>
   <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    .char-count {
+      margin-left: 10px; /* Espacement entre le champ et le compteur */
+      font-weight: bold;  /* Met le compteur en gras */
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h2 class="mt-4">Ajouter un Contact</h2>
     <form class="row g-3" id="contactForm">
       <div class="col-12">
-        <label for="lastname" class="form-label">Nom de Famille</label>
-        <input type="text" class="form-control" id="lastname" required>
+        <label for="lastname" class="form-label">Nom </label>
+        <div class="d-flex align-items-center">
+          <input type="text" class="form-control" id="lastname" required oninput="calcNbChar(this.id)">
+          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+        </div>
       </div>
       <div class="col-12">
         <label for="firstname" class="form-label">Prénom</label>
-        <input type="text" class="form-control" id="firstname" required>
+        <div class="d-flex align-items-center">
+          <input type="text" class="form-control" id="firstname" required oninput="calcNbChar(this.id)">
+          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+        </div>
       </div>
       <div class="col-12">
         <label for="dob" class="form-label">Date de Naissance</label>
@@ -24,8 +36,11 @@
       </div>
       <div class="col-12">
         <label for="address" class="form-label">Adresse</label>
-        <input type="text" class="form-control" id="address" required>
-        <button type="button" class="btn btn-info mt-2" id="getLocationBtn">Obtenir ma Position</button>
+        <div class="d-flex align-items-center">
+          <input type="text" class="form-control" id="address" required oninput="calcNbChar(this.id)">
+          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+          <button type="button" class="btn btn-info mt-2" id="getLocationBtn">GPS</button>
+        </div>
       </div>
       
       <!-- Carte pour afficher la localisation -->
@@ -33,7 +48,10 @@
 
       <div class="col-12">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required>
+        <div class="d-flex align-items-center">
+          <input type="email" class="form-control" id="email" required oninput="calcNbChar(this.id)">
+          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+        </div>
       </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Soumettre</button>
@@ -71,6 +89,13 @@
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/form-validation.js"></script>
     <script src="js/gps.js"></script>
+    
+    <!-- Fonction pour mettre à jour le nombre de caractères -->
+    <script>
+      function calcNbChar(id) {
+        document.querySelector(`#${id} + span`).textContent = document.querySelector(`#${id}`).value.length;
+      }
+    </script>
   </div>
 </body>
 </html>
