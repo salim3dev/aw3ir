@@ -90,40 +90,40 @@ aria-hidden="true"
 </div>
 </div>
 
-<!-- Modal pour validation réussie avec Google Maps -->
+
+<!-- Modal pour afficher la carte -->
 <div
-class="modal fade"
-id="resultModal"
-tabindex="-1"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
+  class="modal fade"
+  id="resultModal"
+  tabindex="-1"
+  aria-labelledby="resultModalLabel"
+  aria-hidden="true"
 >
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Validation réussie</h5>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <!-- L'image Google Maps avec un lien vers Google Maps -->
-      <a href="http://maps.google.com/maps?q=Paris" target="_blank">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=Paris&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"
-             alt="Google Maps Paris">
-      </a>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-        OK
-      </button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultModalLabel">Your Map</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- L'image de la carte sera insérée ici dynamiquement -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
     </div>
   </div>
 </div>
-</div>
+
+
+
 
 </body>
 </html>
