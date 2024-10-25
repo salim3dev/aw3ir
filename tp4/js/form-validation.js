@@ -1,13 +1,12 @@
 // form-validation.js
 
-// Fonction pour valider le format de l'email
+// Validation de l'email
 function validateEmail(email) {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
-// Fonction pour valider les champs du formulaire
+// Validation des champs
 function validateForm() {
   const lastname = document.getElementById("lastname").value;
   const firstname = document.getElementById("firstname").value;
@@ -15,7 +14,6 @@ function validateForm() {
   const address = document.getElementById("address").value;
   const email = document.getElementById("email").value;
 
-  // Vérifications de validation
   if (lastname.length < 5) {
     showValidationModal("Le nom doit comporter au moins 5 caractères.");
     return false;
@@ -37,31 +35,28 @@ function validateForm() {
     return false;
   }
 
-  // Si toutes les validations passent
-  alert("Formulaire soumis avec succès !");
-  return true; // Retourner true pour indiquer une soumission valide du formulaire
+  contactStore.add(lastname, firstname, dob, address, email);
+  alert("Contact ajouté avec succès !");
+  return true;
 }
 
-// Fonction pour afficher la fenêtre modale d'erreur de validation
+// Afficher la modale d'erreur
 function showValidationModal(message) {
-  document.querySelector(".modal-body").textContent = message; // Mettre à jour le message de la modale
+  document.querySelector(".modal-body").textContent = message;
   var myModal = new bootstrap.Modal(document.getElementById("validationModal"));
   myModal.show();
 }
 
-// Intercepter la soumission du formulaire et valider les entrées
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+    event.preventDefault();
     if (validateForm()) {
-      // Si valide, procéder à la soumission du formulaire ou d'autres actions
-      // Exemple : Vous voudrez peut-être envoyer les données via AJAX ou similaire
+      // Autres actions après validation
     }
   });
 
-  // Intercepter l'événement de clic sur le bouton Obtenir ma Position
+  // Clic sur le bouton GPS
   document.getElementById("getLocationBtn").addEventListener("click", function () {
-    getLocation(); // Appeler la fonction pour obtenir la géolocalisation
+    getLocation();
   });
 });
-
