@@ -1,12 +1,11 @@
-// form-validation.js
-
-// Validation de l'email
+// Fonction pour valider le format de l'email
 function validateEmail(email) {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
-// Validation des champs
+// Fonction pour valider les champs du formulaire
 function validateForm() {
   const lastname = document.getElementById("lastname").value;
   const firstname = document.getElementById("firstname").value;
@@ -36,27 +35,25 @@ function validateForm() {
   }
 
   contactStore.add(lastname, firstname, dob, address, email);
-  alert("Contact ajouté avec succès !");
+  displayContactList();
   return true;
 }
 
-// Afficher la modale d'erreur
+// Fonction pour afficher la fenêtre modale d'erreur de validation
 function showValidationModal(message) {
   document.querySelector(".modal-body").textContent = message;
   var myModal = new bootstrap.Modal(document.getElementById("validationModal"));
   myModal.show();
 }
 
+// Intercepter la soumission du formulaire et valider les entrées
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
-    if (validateForm()) {
-      // Autres actions après validation
-    }
+    validateForm();
   });
 
-  // Clic sur le bouton GPS
-  document.getElementById("getLocationBtn").addEventListener("click", function () {
+  document.getElementById("getLocationBtn").addEventListener("click", () => {
     getLocation();
   });
 });
