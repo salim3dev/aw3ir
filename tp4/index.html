@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <style>
     .char-count {
-      margin-left: 10px; /* Espacement entre le champ et le compteur */
-      font-weight: bold;  /* Met le compteur en gras */
+      margin-left: 10px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -17,17 +17,17 @@
     <h2 class="mt-4">Ajouter un Contact</h2>
     <form class="row g-3" id="contactForm">
       <div class="col-12">
-        <label for="lastname" class="form-label">Nom </label>
+        <label for="lastname" class="form-label">Nom</label>
         <div class="d-flex align-items-center">
           <input type="text" class="form-control" id="lastname" required oninput="calcNbChar(this.id)">
-          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+          <span class="char-count">0</span>
         </div>
       </div>
       <div class="col-12">
         <label for="firstname" class="form-label">Prénom</label>
         <div class="d-flex align-items-center">
           <input type="text" class="form-control" id="firstname" required oninput="calcNbChar(this.id)">
-          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+          <span class="char-count">0</span>
         </div>
       </div>
       <div class="col-12">
@@ -38,19 +38,18 @@
         <label for="address" class="form-label">Adresse</label>
         <div class="d-flex align-items-center">
           <input type="text" class="form-control" id="address" required oninput="calcNbChar(this.id)">
-          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
-          <button type="button" class="btn btn-info mt-2" id="getLocationBtn">GPS</button>
+          <span class="char-count">0</span>
+          <button type="button" class="btn btn-info ms-2" id="getLocationBtn">GPS</button>
         </div>
       </div>
-      
-      <!-- Carte pour afficher la localisation -->
+
       <div id="map" class="mt-4"></div>
 
       <div class="col-12">
         <label for="email" class="form-label">Email</label>
         <div class="d-flex align-items-center">
           <input type="email" class="form-control" id="email" required oninput="calcNbChar(this.id)">
-          <span class="char-count">0</span> <!-- Affichage du nombre de caractères -->
+          <span class="char-count">0</span>
         </div>
       </div>
       <div class="col-12">
@@ -58,39 +57,22 @@
       </div>
     </form>
 
-    <!-- Modal pour les erreurs de validation -->
-    <div
-      class="modal fade"
-      id="validationModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Erreurs du Formulaire</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">Il y a des erreurs de validation dans le formulaire.</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-info mt-2" id="getLocationBtn">OK</button>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap Bundle with Popper.js -->
     <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/store.js"></script>
     <script src="js/form-validation.js"></script>
     <script src="js/gps.js"></script>
-    
-    <!-- Fonction pour mettre à jour le nombre de caractères -->
     <script>
       function calcNbChar(id) {
         document.querySelector(`#${id} + span`).textContent = document.querySelector(`#${id}`).value.length;
