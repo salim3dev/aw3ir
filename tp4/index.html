@@ -39,10 +39,11 @@
         <div class="d-flex align-items-center">
           <input type="text" class="form-control" id="address" required oninput="calcNbChar(this.id)">
           <span class="char-count">0</span>
-          <button type="button" class="btn btn-info ms-2" id="getLocationBtn">GPS</button>
+          <button type="button" class="btn btn-info mt-2" id="getLocationBtn">GPS</button>
         </div>
       </div>
-
+      
+      <!-- Carte pour afficher la localisation -->
       <div id="map" class="mt-4"></div>
 
       <div class="col-12">
@@ -57,6 +58,27 @@
       </div>
     </form>
 
+    <!-- Tableau pour afficher la liste des contacts -->
+    <div class="container mt-5">
+      <h3>Liste des Contacts</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de Naissance</th>
+            <th>Adresse</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les contacts seront insérés ici -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal pour les erreurs de validation -->
     <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -65,14 +87,21 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">Il y a des erreurs de validation dans le formulaire.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info mt-2" id="getLocationBtn">OK</button>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Bootstrap Bundle with Popper.js -->
     <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/store.js"></script>
     <script src="js/form-validation.js"></script>
     <script src="js/gps.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/display.js"></script>
+    
+    <!-- Fonction pour mettre à jour le nombre de caractères -->
     <script>
       function calcNbChar(id) {
         document.querySelector(`#${id} + span`).textContent = document.querySelector(`#${id}`).value.length;
